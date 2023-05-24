@@ -7,7 +7,11 @@
 
 
 
+
 function classifier (object){
+
+  let d = JSON.stringify(object)
+  let newArr = JSON.parse(d)
 
   function forOld (value){
     let x = []
@@ -38,24 +42,24 @@ function classifier (object){
 
   let solution = {};
 
-input.forEach(function (element) {
+newArr.forEach(function (element) {
   element.age = 2019 - new Date (element.dob) .getFullYear()
 })
-input.sort((p1, p2) => (p1.age - p2.age))
+newArr.sort((p1, p2) => (p1.age - p2.age))
 
 let members = []
 if (members.length === 0){
-  members.push([input[0]]);
+  members.push([newArr[0]]);
 }
 
-for (let i = 1; i < input.length; i++){
+for (let i = 1; i < newArr.length; i++){
   let bigArr = members[members.length-1]
   let y = bigArr[bigArr.length-1]
-  if(bigArr.length < 3 && Math.abs(y.age - input[i].age) < 5 ){
-    bigArr.push(input[i])
+  if(bigArr.length < 3 && Math.abs(y.age - newArr[i].age) < 5 ){
+    bigArr.push(newArr[i])
 }else{
 
-    members.push([input[i]])
+    members.push([newArr[i]])
 
   }
 
@@ -80,6 +84,5 @@ return solution
 
 
 export default classifier;
-
 
 
