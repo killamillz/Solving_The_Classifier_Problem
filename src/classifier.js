@@ -69,7 +69,7 @@ for (let i = 1; i < newArr.length; i++){
         members:members[i],
         oldest: forOld(members[i]),
         sum: allSum(members[i]),
-        regNo: reg(members[i])
+        regNos: reg(members[i])
       }
     }
 }
