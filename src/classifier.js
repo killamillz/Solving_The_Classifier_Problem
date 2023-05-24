@@ -34,10 +34,10 @@ function classifier (object){
     let x = []
     for (let i = 0; i < value.length; i++)
     x.push(value[i].regNo)
-    nums = x.map(function(str) {
+    let nums = x.map(function(str) {
       return parseInt(str); });
       nums.sort((a,b) => a - b)
-      return nums
+      return nums;
   }
 
   let solution = {};
