@@ -78,7 +78,6 @@ solution.noOfGroups= members.length
     }
   }
 
-  console.log(solution)
 return solution
 }
 
