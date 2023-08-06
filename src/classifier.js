@@ -3,31 +3,31 @@
 
 function classifier (object){
 
-  let d = JSON.stringify(object)
-  let newArr = JSON.parse(d)
+  let data = JSON.stringify(object)
+  let newArr = JSON.parse(data)
 
   function forOld (value){
-    let x = []
+    let arrr = []
     for (let i = 0; i < value.length; i++)
-    x.push(value[i].age)
-    let y = Math.max(...x)
-    return y
+    arr.push(value[i].age)
+    let highest = Math.max(...arr)
+    return highest
   }
 
   function allSum(value){
-    let x = [];
+    let arr = [];
     let sums = 0;
     for (let i = 0; i < value.length; i++)
-    x.push(value[i].age)
-    x.map(y => sums += y);
+    arr.push(value[i].age)
+    arr.map(items => sums += items);
     return sums
   }
 
   function reg (value){
-    let x = []
+    let arr = []
     for (let i = 0; i < value.length; i++)
-    x.push(value[i].regNo)
-    let nums = x.map(function(str) {
+    arr.push(value[i].regNo)
+    let nums = arr.map(function(str) {
       return parseInt(str); });
       nums.sort((a,b) => a - b)
       return nums;
